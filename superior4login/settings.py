@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
-import django_heroku
-import dj_database_url
+# import django_heroku
+# import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -17,7 +17,7 @@ SECRET_KEY = 'django-insecure-v1-zayyd+!z%34d_r0#71#01+=j2m--m@nwpd3p!0*lr^7qvko
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['superior4login.herokuapp.com', '*']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 # JAZZMIN SETTINGS
 JAZZMIN_SETTINGS = {
