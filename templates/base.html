@@ -1,0 +1,69 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Log In</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="icon" type="image/png" sizes="8x8" href="Images/right now white bg 1.png">
+
+    </head>
+    <body>
+        <nav class="navbar header">
+            <div class="container">
+              <a class="navbar-brand" href="#">
+                <div class="img-container" id="img-container">
+                  <img src="{% static 'images/right now white bg 1.png' %}" class="img-logo">
+                </div>
+              </a>
+            </div>
+        </nav>
+
+        <div class="body-content" id="body-content">
+            <div class="background-set">
+                <img src="{% static 'images/Superior4-logo.png' %}" class="background-img">
+            </div>
+                <div class="right-hand-side">
+                    <div class="credentials-section" id="credentials-section">
+                        <p>This content is password protected. To view it please enter your credentials below:</p>
+                    </div>
+                    <br>
+                    <br>
+                    <main>
+                        {% block content %}
+                        {% endblock %}
+                    </main>
+                    <br>
+                    <div class="extra">
+                        <marquee>Delivering excellence...</marquee>
+                    </div>
+                </div>
+
+        <div style="background-color:#5c410e; width:auto; height:20px; margin-top:0; position: relative; padding:0;"></div>
+        
+        
+       
+
+            
+        </div>
+        <div class="footer-section" id="footer-section">
+            <div class="left-side-footer" id="left-side-footer">
+                <div class="partners">
+                    <p>Partners</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer style="position:absolute;bottom:0;width:100%; background-color:#5c410e; color:white; font-weight: bold; font-size:20;"><center><strong>
+            <a href="https://superior4.com/">Superior4</a>
+        </strong></center></footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    </body>
+</html>
