@@ -7,6 +7,10 @@ from .models import Profile
 from django.contrib.admin import AdminSite
 
 # Register your models here.
+
+ADMIN_SITE_TITLE = "Superior4 - Admin"
+ADMIN_SITE_HEADER = "Superior4"
+
 admin.site.register(Profile)
 
 # class EventAdminSite(AdminSite):

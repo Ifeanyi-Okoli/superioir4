@@ -1,0 +1,25 @@
+
+
+{% extends 'base.html' %}
+    {% block title %}Superior International LLC{% endblock %}
+        {% block content %}
+        <div><center>
+        <h1>Welcome to</h1>
+        <p>Superior4 Gallery Page</p>
+        <br>
+        {% if user.is_authenticated %}
+            <p>Hi {{ user.username }}!</p>
+            <p><a href="https://superior4.com/">Explore Superior4</a></p>
+            <p><a href="{% url 'logout' %}">Logout</a></p>
+            <br>
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        {% endif %}
+        </center></div>
+{% endblock %}

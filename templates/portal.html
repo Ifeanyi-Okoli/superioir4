@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Superior International LLC{% endblock %}
+{% block content %}
+<div><center>
+<h1 style="font-family: 'Arial', sans-serif; font-weight: bold; font-size: 32px;">Welcome to</h1>
+<p style="font-family: 'Arial', sans-serif; font-size: 18px;">Superior4 Portal</p>
+{% if user.is_authenticated %}
+    <p style="font-family: 'Arial', sans-serif; font-size: 16px;">Hi {{ user.username }}!</p>
+    <p style="font-family: 'Arial', sans-serif; font-size: 14px;"><a href="https://superior4.com/">Explore Superior4</a></p>
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+{% else %}
+    <p style="font-family: 'Arial', sans-serif; font-size: 12px;">You are not logged in</p>
+    <a href="{% url 'login' %}" class="text-warning-emphasis text-decoration-none">Login</a>
+{% endif %}
+</center></div>
+{% endblock %}
+        
+    

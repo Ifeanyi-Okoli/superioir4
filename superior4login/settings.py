@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
-# import django_heroku
-# import dj_database_url
+import django_heroku
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,9 +22,10 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [    
+    'django.contrib.admin', 
     'jazzmin',
-    'django.contrib.admin',
+    # 'jazzmin.mixins.JazzminAdminMixin',   
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -117,32 +118,40 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+
+STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-STATIC_URL = '/static/'
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# django_heroku.settings(locals())
+ADMIN_MEDIA_PREFIX = '/static/admin/'
+
+ADMIN_SITE_TITLE = "Superior4 "
+ADMIN_SITE_HEADER = "Superior4"
+
+django_heroku.settings(locals())
 
 # JAZZMIN SETTINGS
 JAZZMIN_SETTINGS = {
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
     "site_header": "Superior4",
-    "site_logo": "{% static 'images/logo1.png' %}",
+    "site_logo": "/admin/logo.png",
     "site_title": "Superior4 Admin",
-    "login_logo": "{% static 'images/right now white bg 1.png' %}",
+    "login_logo": "/admin/logo2.png",
 
     # Logo to use for login form in dark themes (defaults to login_logo)
-    "login_logo_dark": "static/logo1.png",
+    "login_logo_dark": "/static/admin/logo.png",
 
     # CSS classes that are applied to the logo above
     "site_logo_classes": "img-circle",
 
     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
-    "site_icon": "images/logo1.png",
+    "site_icon": "/static/images/logo1.png",
 
     # Welcome text on the login screen
     "welcome_sign": "Welcome to Superior4 Admin",
@@ -173,7 +182,7 @@ JAZZMIN_SETTINGS = {
         {"model": "auth.User"},
 
         # App with dropdown menu to all its models pages (Permissions checked against models)
-        {"app": "books"},
+        # {"app": "books"},
     ],
 
     #############
@@ -202,18 +211,7 @@ JAZZMIN_SETTINGS = {
     # Hide these models when generating side menu (e.g auth.user)
     "hide_models": [],
 
-    # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
-    "order_with_respect_to": ["auth", "books", "books.author", "books.book"],
-
-    # Custom links to append to app groups, keyed on app name
-    "custom_links": {
-        "books": [{
-            "name": "Make Messages", 
-            "url": "make_messages", 
-            "icon": "fas fa-comments",
-            "permissions": ["books.view_book"]
-        }]
-    },
+   
 
     # Custom icons for side menu apps/models See https://fontawesome.com/icons?d=gallery&m=free&v=5.0.0,5.0.1,5.0.10,5.0.11,5.0.12,5.0.13,5.0.2,5.0.3,5.0.4,5.0.5,5.0.6,5.0.7,5.0.8,5.0.9,5.1.0,5.1.1,5.2.0,5.3.0,5.3.1,5.4.0,5.4.1,5.4.2,5.13.0,5.12.0,5.11.2,5.11.1,5.10.0,5.9.0,5.8.2,5.8.1,5.7.2,5.7.1,5.7.0,5.6.3,5.5.0,5.4.2
     # for the full list of 5.13.0 free icon classes
@@ -235,7 +233,7 @@ JAZZMIN_UI_TWEAKS = {
     "footer_small_text": False,
     "body_small_text": True,
     "brand_small_text": False,
-    "brand_colour": "navbar-secondary",
+    "brand_colour": "navbar-navy",
     "accent": "accent-info",
     "navbar": "navbar-white navbar-light",
     "no_navbar_border": False,
@@ -268,4 +266,4 @@ JAZZMIN_UI_TWEAKS = {
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = "home"
-LOGOUT_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "portal"
