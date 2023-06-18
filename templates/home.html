@@ -1,5 +1,3 @@
-
-
 {% extends 'base.html' %}
 {% load static %}
     {% block title %}Superior International LLC{% endblock %}
@@ -24,7 +22,7 @@
                 </div>
             </div> {% endcomment %}
 
-            <div id="carouselExampleAutoplaying" class="carousel slide position-absolute top-50 start-50 translate-middle mt-5" data-bs-ride="carousel">
+            {% comment %} <div id="carouselExampleAutoplaying" class="carousel slide position-absolute top-50 start-50 translate-middle mt-5" data-bs-ride="carousel">
                 <br>
                 <div class="carousel-inner ">
                   <div class="carousel-item active h-50">
@@ -45,8 +43,32 @@
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
                 </button>
-              </div>
+              </div> {% endcomment %}
             
+
+              <div class="slider position-absolute top-100 -bottom-25 -mt-5 start-50 translate-middle">
+                <div class="slider-container">
+                    <div class="slider-item">
+                      <a href="https://superior4.com/"><img src="{% static 'images/immune-health-.jpg' %}" alt="Image 1" class="d-block w-75 h-75 rounded-4 shadow-lg"></a>
+                    </div>
+                    <div class="slider-item">
+                      <a href="https://superior4.com/"><img src="{% static 'images/liver-health.jpg' %}" alt="Image 2" class="d-block w-75 h-75 rounded-4 shadow-lg"></a>
+                    </div>
+                    <div class="slider-item">
+                      <a href="https://superior4.com/"><img src="{% static 'images/neural-cognitive.jpg' %}" alt="Image 3" class="d-block w-75 h-75 rounded-4 shadow-lg"></a>
+                    </div>
+                    <div class="slider-item">
+                      <a href="https://superior4.com/"><img src="{% static 'images/blood-sugar.jpg' %}" alt="Image 4" class="d-block w-75 h-75 rounded-4 shadow-lg"></a>
+                    </div>
+                    <div class="slider-item">
+                      <a href="https://superior4.com/"><img src="{% static 'images/liver-health.jpg' %}" alt="Image 2" class="d-block w-75 h-75 rounded-4 shadow-lg"></a>
+                    </div>
+                    <div class="slider-item">
+                      <a href="https://superior4.com/"><img src="{% static 'images/neural-cognitive.jpg' %}" alt="Image 3" class="d-block w-75 h-75 rounded-4 shadow-lg"></a>
+                    </div>
+                    <!-- Add more slider items as needed -->
+                </div>
+            </div>
             
         {% endif %}
         </center></div>
